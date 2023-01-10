@@ -1,0 +1,76 @@
+[34mAuto commit by fitlog[0m
+Experiment dir : logs/log_20221220_213752
+12/20 09:37:52 PM args = Namespace(arch='SNN_Darts_s2e0', auxiliary=True, auxiliary_weight=0.4, batch_size=50, cell_arch_fea=None, cutout=True, cutout_length=16, data='data/', drop_path_prob=0.0, epochs=100, experiment_description='classification v1.0 fc spike', fea_block_multiplier=3, fea_filter_multiplier=48, fea_num_layers=8, fea_step=3, grad_clip=5, init_channels=36, layers=8, learning_rate=0.025, model_path='saved_models', momentum=0.9, net_arch_fea=None, report_freq=50, save='logs/log_20221220_213752', seed=12345, use_DGS=False, weight_decay=0.0003)
+12/20 10:13:36 PM param size = 14.315363MB
+Files already downloaded and verified
+Files already downloaded and verified
+12/20 10:13:37 PM epoch 0 lr 2.500000e-02
+[8, 9, 10, 11, 12]
+[-0.4, -0.2, 0.0, 0.2, 0.4]
+{'feature.stem0.alpha_diffb': tensor([0., 0., 0., 0., 0.])}
+/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:106: UserWarning: 
+NVIDIA GeForce RTX 3090 with CUDA capability sm_86 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_61 sm_70 sm_75 compute_37.
+If you want to use the NVIDIA GeForce RTX 3090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+Traceback (most recent call last):
+  File "train.py", line 329, in <module>
+    
+  File "train.py", line 123, in main
+    logging.info('train_acc %f', train_acc)
+  File "train.py", line 278, in train
+    functional.reset_net(model)
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hanjing/CHE/SpikeDHS_CLA/models/snndarts_retrain/LEAStereo.py", line 51, in forward
+    pooling_out = self.global_pooling(feature_out) 
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hanjing/CHE/SpikeDHS_CLA/models/snndarts_retrain/new_model_2d.py", line 185, in forward
+    # print('expand shape',x.shape)
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hanjing/CHE/SpikeDHS_CLA/models/snndarts_search/SNN.py", line 179, in forward
+    else:
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hanjing/CHE/SpikeDHS_CLA/models/snndarts_search/SNN.py", line 147, in forward
+    input, = ctx.saved_tensors
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/modules/batchnorm.py", line 167, in forward
+    return F.batch_norm(
+  File "/home/hanjing/Software/anaconda3/lib/python3.8/site-packages/torch/nn/functional.py", line 2281, in batch_norm
+    return torch.batch_norm(
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
+usage: cifar [-h] [--data DATA] [--batch_size BATCH_SIZE]
+             [--learning_rate LEARNING_RATE] [--momentum MOMENTUM]
+             [--weight_decay WEIGHT_DECAY] [--report_freq REPORT_FREQ]
+             [--epochs EPOCHS] [--init_channels INIT_CHANNELS]
+             [--layers LAYERS] [--model_path MODEL_PATH] [--auxiliary]
+             [--auxiliary_weight AUXILIARY_WEIGHT] [--cutout]
+             [--cutout_length CUTOUT_LENGTH] [--drop_path_prob DROP_PATH_PROB]
+             [--save SAVE] [--seed SEED] [--arch ARCH] [--grad_clip GRAD_CLIP]
+             [--experiment_description EXPERIMENT_DESCRIPTION]
+             [--fea_num_layers FEA_NUM_LAYERS]
+             [--fea_filter_multiplier FEA_FILTER_MULTIPLIER]
+             [--fea_block_multiplier FEA_BLOCK_MULTIPLIER]
+             [--fea_step FEA_STEP] [--net_arch_fea NET_ARCH_FEA]
+             [--cell_arch_fea CELL_ARCH_FEA] [--use_DGS USE_DGS]
+cifar: error: unrecognized arguments: \
+usage: cifar [-h] [--data DATA] [--batch_size BATCH_SIZE]
+             [--learning_rate LEARNING_RATE] [--momentum MOMENTUM]
+             [--weight_decay WEIGHT_DECAY] [--report_freq REPORT_FREQ]
+             [--epochs EPOCHS] [--init_channels INIT_CHANNELS]
+             [--layers LAYERS] [--model_path MODEL_PATH] [--auxiliary]
+             [--auxiliary_weight AUXILIARY_WEIGHT] [--cutout]
+             [--cutout_length CUTOUT_LENGTH] [--drop_path_prob DROP_PATH_PROB]
+             [--save SAVE] [--seed SEED] [--arch ARCH] [--grad_clip GRAD_CLIP]
+             [--experiment_description EXPERIMENT_DESCRIPTION]
+             [--fea_num_layers FEA_NUM_LAYERS]
+             [--fea_filter_multiplier FEA_FILTER_MULTIPLIER]
+             [--fea_block_multiplier FEA_BLOCK_MULTIPLIER]
+             [--fea_step FEA_STEP] [--net_arch_fea NET_ARCH_FEA]
+             [--cell_arch_fea CELL_ARCH_FEA] [--use_DGS USE_DGS]
+cifar: error: unrecognized arguments: \
